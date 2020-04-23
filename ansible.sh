@@ -10,19 +10,17 @@
 
 software=(ansible jq vault curl)
 
-for item in "${software[@]}"
-do
+for item in "${software[@]}"; do
   if [[ ! -x $(which ${item}) ]]; then
     echo "${item} missing!"
     exit 1
   fi
 done
 
-
 # functions
-ssh_sign () {
+ssh_sign() {
 
-  vault write -field=signed_key ssh/sign/sean public_key=@$HOME/.ssh/id_rsa.pub > $HOME/.ssh/id_rsa-cert.pub
+  vault write -field=signed_key ssh/sign/sean public_key=@$HOME/.ssh/id_rsa.pub >$HOME/.ssh/id_rsa-cert.pub
 
 }
 
@@ -65,5 +63,5 @@ fi
 
 # call Ansible
 
+cd ansible
 $(which ansible) "$@"
-
