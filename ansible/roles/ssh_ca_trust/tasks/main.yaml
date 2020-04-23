@@ -1,13 +1,13 @@
 ---
 - name: Bombadil Vault SSH CA
   lineinfile:
-    path: /etc/ssh/trusted-user-ca-key.pem
+    path: /etc/ssh/trusted-user-ca-keys.pem
     line: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC9q4O5j5BcIbuubQlsl8Zq34TsK0yggZkTlJTDGntCy4moiMMQXDZ3jxFxKMJwH3PdSkD5c0jmpEBnbBiF49a/yhBXVTjkS1mSr6FWAK0b/D43Yv/YEN+hxAE6Bps2khvhrRgWGNmFCnZFbhUTfAtu2hqxD7zycZM1aQdIO2HBqA4afbQiwpXFosmTvWLQlNUSIPMA9EvBZGhG4lTX28HGD8G/je4pfML0hcYjvhl5oclzKCb8TW9j3IcjfGSCoVa7QyJwszTiK6YLYdmDaEEx6LqHYqvv68+14ShFVdX0ghuuIijiP2tntMSmm4pgYNxvQEA4c/SneULtHwsvBCz5wc0kvHF+CNZER0xHw9aEgujb5abMq/6HdnLyhBxIErJ4C4VBpwo3iIu6WpxVMdLqUzWI6cSQ93sdCjMu+T/agGEwm0BBn92e4TIdSSkjuUryUVrwWPXQx29Acw9w8PAQSNzbNJ3APLCIc/O5zFaHin40oAOnXmPYIn/sLDcovVErDrDXiBW/2NkK8QWwC8FzvBw+nHpnFOqdSjdO+pbS3K3nOMpJsOSI5rYsbAjgOXERmmEufkiDhvkrBrNdg0qUIT78C87FqUtw1LwKd2axq94HqPsbKQfKyS8ySO1CyCUSXMHZ1Zspp+Onj1LN8XhXykpbM1KBoFsXKqDuq+zYNw=='
     create: yes
 
 - name: Home Vault SSH CA
   lineinfile:
-    path: /etc/ssh/trusted-user-ca-key.pem
+    path: /etc/ssh/trusted-user-ca-keys.pem
     line: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDViSwjgmwTdwdByp29Nht4upJ0mPRlU7Bx6pZ/YZFHvnU/aoqL3qXkuI8xcF6XzwKahATeOPxCqX0oyRyNICak1ECwiOrH4PoOP/XMT0exjxQQLEAvG0lzPR5QdW5vD+aWZqNrqqkclXSP3T1h6Lz4KK8a6v5BAC136pUtiNbHXhdhuNxhLQlLfqVK3eGTctwh75mB0UzkLyvhH/oKDhsM+P6/FEwkCyElTrD6QNI0bLUXtKUMVO8SzgIzvokgp76QMesZT6uuKdiF0K8UGoTpQsnAkpjpDpmOl3JT5360SrNg/Tjb5K0PFbkcvxPbp4ySK8mbZFeK95WauhN2oyQjzk+G3xGdbVlfiurpi3WX6AZZBDqVoZYW6s4teZO/6wVQoULY6tMXPoUj6ZrSgg2fEXhOZgB0/iJhRiM+w/iIZjY7XmrMzmDGnd4aUWoMY9pXVsNm+9k9GZRmxHANtXEVFhhzQHifbi0wB6HpkzXGKuF65vg5Q7mX6Zn+EmDBVdupOVY5iiGlT/vsCzt7IZZEiFcSimeh/S7ULrJggHrkhqdLbP4QCh4mGAvSQD2uyuFeyEo7amAnXQXd2EWK51YnNUxe3aoTk8bJrzFC9WbXNUmA/zsFWnclh1PNfNEYxa2ZxiAvijKIv2JaCFoHpCoRQJiEF+vUeXMUrbPpwMMQvQ=='
     create: yes
 
