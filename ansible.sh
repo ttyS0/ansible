@@ -64,4 +64,12 @@ fi
 # call Ansible
 
 cd ansible
-$(which ansible) "$@"
+
+if [[ $# -ge 1 ]]; then
+  if [[ $1 =~ 'pb' ]]; then
+    shift
+    $(which ansible-playbook) playbook.yaml "$@"
+  else
+    $(which ansible) "$@"
+  fi
+fi
