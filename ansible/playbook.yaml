@@ -1,11 +1,10 @@
 ---
-- hosts: all:!ceph
+- hosts: rpi:nuc:!ceph
   become: yes
   roles:
     - ssh_ca_trust
-    - apt-general
-    - apt-kubernetes
     - apt-ansible
+    - apt-general
 
 - hosts: ceph
   become: yes
@@ -14,3 +13,13 @@
     - apt-ansible
     - apt-ceph
     - apt-general
+
+- hosts: k8s_master:k8s_node
+  become: yes
+  roles:
+    - apt-kubernetes
+
+- hosts: all
+  become: yes
+  roles:
+    - apt-maint
