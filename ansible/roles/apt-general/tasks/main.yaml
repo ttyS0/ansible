@@ -13,6 +13,7 @@
       - dosfstools
       - xfsprogs
       - ceph-common
+      - ceph-fuse
       - rbd-nbd
       - docker.io
       - git

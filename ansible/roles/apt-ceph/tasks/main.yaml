@@ -11,4 +11,12 @@
     state: present
     update_cache: yes
 
-- name: ceph
+- name: install
+  apt:
+    pkg:
+      - ceph
+      - ceph-common
+      - ceph-mds
+      - ceph-fuse
+      - ceph-mds
+
