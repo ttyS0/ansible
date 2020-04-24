@@ -1,6 +1,16 @@
 ---
-- hosts: all
+- hosts: all:!ceph
+  become: yes
   roles:
     - ssh_ca_trust
-  become: yes
+    - apt-general
+    - apt-kubernetes
+    - apt-ansible
 
+- hosts: ceph
+  become: yes
+  roles:
+    - ssh_ca_trust
+    - apt-ansible
+    - apt-ceph
+    - apt-general

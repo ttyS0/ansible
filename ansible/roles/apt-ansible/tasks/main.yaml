@@ -1,0 +1,11 @@
+- name: ansible repository key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 93C4A3FD7BB9C367
+
+- name: ansible repository
+  apt_repository:
+    repo: 'deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main'
+    state: present
+    filename: ansible
+    update_cache: yes

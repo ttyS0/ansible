@@ -1,0 +1,23 @@
+---
+- name: comment out source repositories
+  replace:
+    dest: /etc/apt/sources.list
+    regexp: '^deb-src'
+    replace: '#deb-src'
+
+- name: base packages
+  apt:
+    pkg:
+      - lsof
+      - jq
+      - dosfstools
+      - xfsprogs
+      - ceph-common
+      - rbd-nbd
+      - docker.io
+      - git
+    state: latest
+    update_cache: yes
+    install_recommends: no
+
+

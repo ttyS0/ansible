@@ -1,0 +1,12 @@
+---
+- name: upgrade
+  apt:
+    upgrade: safe
+
+- name: autoremove
+  apt:
+    autoremove: yes
+
+- name: autoclean
+  apt:
+    autoclean: yes
