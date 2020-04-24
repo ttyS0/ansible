@@ -17,6 +17,7 @@
       - rbd-nbd
       - docker.io
       - git
+      - python-apt
     state: latest
     update_cache: yes
     install_recommends: no

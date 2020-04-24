@@ -12,12 +12,12 @@ radagast
 durin
 thorin
 
-[k8s_master]
+[k8master]
 bilbo
 frodo
 samwise
 
-[k8s_node]
+[k8node]
 gandalf
 radagast
 merry

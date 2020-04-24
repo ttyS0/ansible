@@ -14,7 +14,7 @@
     - apt-ceph
     - apt-general
 
-- hosts: k8s_master:k8s_node
+- hosts: k8master:k8node
   become: yes
   roles:
     - apt-kubernetes
