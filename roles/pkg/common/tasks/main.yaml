@@ -5,7 +5,7 @@
     regexp: '^deb-src'
     replace: '#deb-src'
 
-- name: base packages
+- name: base packages install
   apt:
     pkg:
       - lsof
@@ -13,13 +13,14 @@
       - dosfstools
       - xfsprogs
       - ceph-common
-      - ceph-fuse
-      - rbd-nbd
       - docker.io
       - git
-      - python-apt
+      - aptitude
+      - python3-apt
     state: latest
     update_cache: yes
     install_recommends: no
+
+
 
 

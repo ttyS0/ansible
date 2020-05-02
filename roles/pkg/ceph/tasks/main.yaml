@@ -1,0 +1,7 @@
+---
+- name: ceph packages install
+  apt:
+    pkg:
+      - ceph
+      - ceph-common
+      - cephadm

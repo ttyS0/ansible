@@ -4,13 +4,14 @@ frodo
 samwise
 merry
 pippin
-bombadil
+gollum
 
 [nuc]
-gandalf
+saruman
 radagast
 durin
 thorin
+balin
 
 [k8master]
 bilbo
@@ -18,7 +19,7 @@ frodo
 samwise
 
 [k8node]
-gandalf
+saruman
 radagast
 merry
 pippin
@@ -26,13 +27,8 @@ pippin
 [ceph]
 durin
 thorin
-gandalf
+balin
 
-[ceph_osd]
-durin
-thorin
 
-[ansible]
-bombadil
 
 

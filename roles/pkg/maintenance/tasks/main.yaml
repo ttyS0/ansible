@@ -1,0 +1,41 @@
+---
+- name: upgrade packages
+  apt:
+    update_cache: true
+    upgrade: safe
+  register: upgrade
+  when: do_upgrade|bool
+
+- name: check for package updates
+  apt:
+    update_cache: true
+  register: update
+  when: not do_upgrade|bool
+
+- name: autoremove packages
+  apt:
+    autoremove: yes
+  when: do_upgrade|bool
+
+- name: autoclean packages
+  apt:
+    autoclean: yes
+  when: do_upgrade|bool
+
+- name: catalog upgraded packages
+  shell: grep -E "^$(date +%Y-%m-%d).+ (install|upgrade) " /var/log/dpkg.log |cut -d " " -f 3-5
+  register: upgrades
+  when: upgrade.changed
+
+- name: show upgraded packages
+  debug: msg="{{ upgrades.stdout_lines }}"
+  when: upgrade.changed
+
+- name: check for upgradable packages
+  shell: apt list --upgradable
+  register: updates
+  when: update.changed
+
+- name: show upgradable packages
+  debug: msg="{{ updates.stdout_lines }}"
+  when: update.changed

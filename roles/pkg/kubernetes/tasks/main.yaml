@@ -1,24 +1,24 @@
 ---
-- name: kubernetes repository key
+- name: import kubernetes repository key
   apt_key:
     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
     state: present
 
-- name: kubernetes repository
+- name: setup kubernetes repository
   apt_repository:
     repo: 'deb https://apt.kubernetes.io/ kubernetes-xenial main'
     state: present
     filename: kubernetes
     update_cache: yes
 
-- name: install
+- name: kubernetes packages install
   apt:
     pkg:
       - kubectl
       - kubeadm
       - kubelet
 
-- name: hold kubelet
+- name: place hold on kubelet package
   dpkg_selections:
     name: kubelet
     selection: hold
